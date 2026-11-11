@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Next Display";
+  src: url("./fonts/next-display-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Next Display Text";
+  src: url("./fonts/next-display-text-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background-main);
+  color: var(--text-primary);
+  font-family: system-ui, sans-serif;
+}
+button { cursor: pointer; }
+.wm-demo {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 18px 12px 20px;
+}
+.wm-comparison, .wm-device { width: min(100%, 424px); }
+.wm-comparison { display: grid; gap: 8px; }
+.wm-controls {
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--components-menu-default-root-border-color);
+  border-radius: var(--global-menu-default-border-radius);
+  background: var(--background-paper);
+}
+.wm-mode {
+  padding: 0 17px;
+  min-height: 44px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: var(--global-toggle-button-medium-border-radius);
+  font: 500 14px/1.2 system-ui, sans-serif;
+}
+.wm-mode[aria-pressed="true"] {
+  color: var(--primary-contrast);
+  background: var(--primary-main);
+}
+.wm-meta {
+  min-height: 20px;
+  margin: 0;
+  color: var(--text-secondary);
+  font: 400 12px/1.4 system-ui, sans-serif;
+}
+.wm-device {
+  overflow: hidden;
+  border: 1px solid var(--components-menu-default-root-border-color);
+  border-radius: var(--global-menu-default-border-radius);
+  background: var(--components-menu-mega-menu-default-background-color);
+  color: var(--components-menu-mega-menu-default-text-color);
+}
+.wm-brand, .wm-title, .wm-row {
+  border-bottom: 1px solid var(--components-menu-mega-menu-navigation-list-default-divider-default-border-color);
+}
+.wm-brand {
+  display: grid;
+  place-items: center;
+  min-height: 47px;
+  background: var(--components-app-bar-brand-bar-default-background-color);
+}
+.wm-brand img { display: block; width: 62px; height: auto; }
+.wm-title {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  align-items: center;
+  min-height: 49px;
+  text-align: center;
+}
+.wm-title h1 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-family: var(--global-h4-font-family), Arial, sans-serif;
+  font-weight: var(--global-h4-font-weight);
+  font-size: var(--global-h4-font-size);
+  line-height: var(--global-h4-line-height);
+  letter-spacing: var(--global-h4-letter-spacing);
+  text-transform: var(--global-h4-text-transform);
+  text-decoration: var(--global-h4-text-decoration);
+  font-style: var(--global-h4-font-style);
+}
+.wm-back {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+}
+.wm-pane {
+  height: min(429px, 62dvh);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+.wm-list { margin: 0; padding: 0; list-style: none; }
+.wm-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 49px;
+  margin: 0;
+  padding: 5px 15px;
+  background: var(--components-menu-mega-menu-default-background-color);
+  color: inherit;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  text-align: left;
+  font-family: var(--component-menu-item-font-family), Arial, sans-serif;
+  font-weight: var(--component-menu-item-font-weight);
+  font-size: var(--component-menu-item-font-size);
+  line-height: var(--component-menu-item-line-height);
+  letter-spacing: var(--component-menu-item-letter-spacing);
+  text-transform: var(--component-menu-item-text-transform);
+  text-decoration: var(--component-menu-item-text-decoration);
+  font-style: var(--component-menu-item-font-style);
+}
+.wm-branch { min-height: 55px; }
+.wm-row span { flex: 1 1 auto; min-width: 0; }
+.wm-thumbnail { flex: none; width: 42px; height: 42px; object-fit: cover; }
+.wm-chevron { flex: none; width: 24px; height: 24px; }
+:where(.wm-mode, .wm-row, .wm-back):focus-visible {
+  outline: 2px solid var(--interactive-focus-default-outline-color);
+  outline-offset: -3px;
+}
+@media (hover: hover) {
+  .wm-row:hover, .wm-back:hover { background: var(--grey-100); }
+}
